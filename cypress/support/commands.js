@@ -61,7 +61,7 @@ Cypress.Commands.add('verifyIsRequired', (targetMessage) => {
         .invoke('prop', 'validationMessage')
         .should((text) => {
             expect(
-                'This is a required field'
+                targetMessage
             ).to.eq(text)
         })
 })
