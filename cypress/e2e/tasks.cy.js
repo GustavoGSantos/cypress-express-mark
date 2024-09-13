@@ -54,4 +54,25 @@ describe('tasks', () => {
                 .should('have.css', 'text-decoration-line', 'line-through')
         })
     })
+    context('delete', () => {
+        it('Should delete a task', () => {
+            const task = {
+                name: 'Pay internet bill',
+                is_done: false
+            }
+
+            cy.deleteTaskByName(task.name)
+            cy.postTask(task)
+
+            cy.visit('http://localhost:3000')
+
+            cy.contains('p', task.name)
+                .parent()
+                .find('button[class*=ItemDelete]')
+                .click()
+
+            cy.contains('p', task.name)
+                .should('not.exist')
+        })
+    })
 })
