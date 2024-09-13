@@ -3,20 +3,27 @@
 describe('tasks', () => {
 
     it('Should register a new task', () => {
-        cy.request({
-            url: 'http://localhost:3333/helper/tasks',
-            method: 'DELETE',
-            body: { name: 'Read a node.js book' }
-        }).then(response => {
-            expect(response.status).to.eq(204)
-        })
+        const taskName = 'Read a node.js book'
 
-        cy.visit('http://localhost:3000')
+        cy.deleteTaskByName(taskName)
+        cy.createTask(taskName)
 
-        cy.get('input[placeholder="Add a new Task"]').type('Read a node.js book')
-        cy.contains('button', 'Create').click()
-
-        cy.contains('main > div > p', 'Read a node.js book')
+        cy.contains('main > div > p', taskName)
             .should('be.visible')
+    })
+
+    it('Should not allow duplicated task', () => {
+        const task = {
+            name: 'Study javascript',
+            is_done: false
+        }
+
+        cy.deleteTaskByName(task.name)
+        cy.postTask(task)
+        cy.createTask(task.name)
+
+        cy.get('.swal2-html-container')
+            .should('be.visible')
+            .should('have.text', 'Task already exists!')
     })
 })
