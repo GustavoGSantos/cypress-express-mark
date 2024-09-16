@@ -39,12 +39,12 @@
     yarn install
  ```
 
+To run the tests headless and generate a report.
  ```bash
     yarn cypress run allure=true
  ```
- To run the tests headless and generate a report.
 
+To open the Cypress visual interface and run the tests.
  ```bash
     yarn cypress open
  ```
- To open the Cypress visual interface and run the tests.
