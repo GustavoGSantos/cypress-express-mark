@@ -32,6 +32,14 @@
  After download the project and run the Mark application:
 
  ```bash
+    npm install
+ ```
+
+ ```bash
+    yarn install
+ ```
+
+ ```bash
     yarn cypress run allure=true
  ```
  To run the tests headless and generate a report.
