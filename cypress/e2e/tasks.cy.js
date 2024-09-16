@@ -1,6 +1,15 @@
 /// <reference types="cypress" />
 
 describe('tasks', () => {
+
+    let testData;
+
+    before(() => {
+        cy.fixture('tasks').then(t => {
+            testData = t
+        })
+    })
+
     context('register', () => {
         it('Should register a new task', () => {
             const taskName = 'Read a node.js book'
@@ -13,10 +22,7 @@ describe('tasks', () => {
         })
 
         it('Should not allow duplicated task', () => {
-            const task = {
-                name: 'Study javascript',
-                is_done: false
-            }
+            const task = testData.dup
 
             cy.deleteTaskByName(task.name)
             cy.postTask(task)
