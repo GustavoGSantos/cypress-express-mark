@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","868","Should register a new task","tasks","Mon Sep 16 13:56:24 BST 2024","passed","Mon Sep 16 13:56:25 BST 2024","","register","",""
+"","231","Should update task to done","tasks","Mon Sep 16 13:56:27 BST 2024","passed","Mon Sep 16 13:56:27 BST 2024","","update","",""
+"","239","Should delete a task","tasks","Mon Sep 16 13:56:27 BST 2024","passed","Mon Sep 16 13:56:27 BST 2024","","delete","",""
+"","870","Should not allow duplicated task","tasks","Mon Sep 16 13:56:25 BST 2024","passed","Mon Sep 16 13:56:26 BST 2024","","register","",""
+"","766","webapp should be online","home","Mon Sep 16 13:56:22 BST 2024","passed","Mon Sep 16 13:56:23 BST 2024","","","",""
+"","192","Required field","tasks","Mon Sep 16 13:56:27 BST 2024","passed","Mon Sep 16 13:56:27 BST 2024","","register","",""
